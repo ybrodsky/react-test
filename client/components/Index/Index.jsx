@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import City from './CityResource';
+import { Link } from 'react-router-dom';
 
 class IndexComponent extends Component {
   constructor(props) {console.log('country')
@@ -9,7 +10,7 @@ class IndexComponent extends Component {
   }
 
   componentDidMount() {
-    this.City.query().then((data) => { console.log(data)
+    this.City.query().then((data) => {
       this.setState({cities: data});
     })
   }
@@ -22,7 +23,7 @@ class IndexComponent extends Component {
     return (
       <ul ref="indexList" className="index-list">
         {this.state.cities.map((item) => {
-          return (<li key={item.id}>{item.name}</li>);
+          return (<li key={item.id}><Link to={{ pathname: '/cities/' + item.id, query: {a: 'b'} }}>{item.name}</Link></li>);
         })}
       </ul>
     )
