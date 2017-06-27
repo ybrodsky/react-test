@@ -26,9 +26,9 @@ class NavbarComponent extends Component {
 		      <Switch>
 		      	<App>
 		      		<Switch>
+						      <Route path="/cities/:id" component={CityEdit}/>
 						      <Route path="/cities" component={Index}/>
 						      <Route path="/countries" component={Country}/>
-						      <Route path="/cities/:id" component={CityEdit}/>
 				     	</Switch>
 			      </App>
 		      </Switch>
